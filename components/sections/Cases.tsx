@@ -17,7 +17,7 @@ const overlayVariants = {
 
 const arrowVariants = {
   rest:  { x: -6, y: 6, opacity: 0 },
-  hover: { x: 0,  y: 0, opacity: 1, transition: { duration: .3, ease: [.16,1,.3,1] } },
+  hover: { x: 0,  y: 0, opacity: 1, transition: { duration: .3, ease: [.16,1,.3,1] as [number,number,number,number] } },
 };
 
 export default function Cases() {
