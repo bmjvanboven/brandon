@@ -11,7 +11,7 @@ const items = [
 
 export default function Why() {
   return (
-    <section style={{ padding: "96px 0" }}>
+    <section className="why-section">
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
         <FadeIn>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 20, marginBottom: 28, flexWrap: "wrap" }}>
@@ -36,8 +36,10 @@ export default function Why() {
         </div>
       </div>
       <style>{`
+        .why-section { padding: 96px 0 }
         .why-grid { grid-template-columns: repeat(4,1fr) }
         @media (max-width:1040px) { .why-grid { grid-template-columns: repeat(2,1fr) } }
+        @media (max-width:720px)  { .why-section { padding: 56px 0 } }
         @media (max-width:600px)  { .why-grid { grid-template-columns: 1fr } }
       `}</style>
     </section>

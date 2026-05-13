@@ -21,7 +21,7 @@ const headings = ["Alles wat je", "nodig hebt om", "sterk online", "te staan."];
 
 export default function Hero() {
   return (
-    <section style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "120px 0 80px", position: "relative", overflow: "hidden" }}>
+    <section className="hero-section" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", overflow: "hidden" }}>
       {/* blobs — transform only, GPU-accelerated */}
       <motion.div
         animate={{ x: [-40, 0, -40], y: [0, 30, 0] }}
@@ -185,6 +185,8 @@ export default function Hero() {
       </div>
 
       <style>{`
+        .hero-section { padding: 120px 0 80px }
+        @media (max-width: 720px) { .hero-section { padding: 100px 0 56px } }
         .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; align-items: stretch }
         .hero-points { grid-template-columns: repeat(3,1fr) }
         @media (max-width: 1040px) { .hero-grid { grid-template-columns: 1fr } }

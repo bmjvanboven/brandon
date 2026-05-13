@@ -39,7 +39,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section style={{ padding: "0 0 80px" }}>
+    <section className="stats-section">
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
         <FadeIn>
           <div
@@ -59,8 +59,10 @@ export default function Stats() {
         </FadeIn>
       </div>
       <style>{`
+        .stats-section { padding: 0 0 80px }
         .stats-grid { grid-template-columns: repeat(3,1fr) }
         @media (max-width:720px) {
+          .stats-section { padding: 0 0 48px }
           .stats-grid { grid-template-columns: 1fr !important; gap: 32px; padding: 36px 0 !important }
           .stats-grid > div { border-left: none !important; padding: 0 24px !important }
         }

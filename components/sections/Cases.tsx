@@ -22,7 +22,7 @@ const arrowVariants = {
 
 export default function Cases() {
   return (
-    <section id="cases" style={{ padding: "96px 0" }}>
+    <section id="cases">
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
         <FadeIn>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 20, marginBottom: 28, flexWrap: "wrap" }}>
@@ -95,8 +95,9 @@ export default function Cases() {
         </div>
       </div>
       <style>{`
+        #cases { padding: 96px 0 }
         .cases-grid { grid-template-columns: repeat(2,1fr) }
-        @media (max-width:720px) { .cases-grid { grid-template-columns: 1fr } }
+        @media (max-width:720px) { #cases { padding: 56px 0 } .cases-grid { grid-template-columns: 1fr } }
       `}</style>
     </section>
   );

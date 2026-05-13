@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: "96px 0" }}>
+    <section id="contact">
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
         <div style={{ display: "grid", gap: 14 }} className="contact-grid">
 
@@ -80,11 +80,13 @@ export default function Contact() {
         </div>
       </div>
       <style>{`
+        #contact { padding: 96px 0 }
         .contact-grid { grid-template-columns: 1.1fr .9fr }
         .c-link { transition: color .2s }
         .c-link:hover { color: #D7DA2A }
         @media (max-width:1040px) { .contact-grid { grid-template-columns: 1fr } }
-        @media (max-width:600px) { .contact-grid > div { padding: 28px 24px !important } }
+        @media (max-width:720px)  { #contact { padding: 56px 0 } }
+        @media (max-width:600px)  { .contact-grid > div { padding: 28px 24px !important } }
       `}</style>
     </section>
   );

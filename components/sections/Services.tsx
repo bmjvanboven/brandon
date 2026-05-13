@@ -34,11 +34,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="diensten" style={{ padding: "96px 0" }}>
+    <section id="diensten">
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
         <FadeIn>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 20, marginBottom: 28, flexWrap: "wrap" }}>
-            <h2 style={{ fontSize: "clamp(28px,3.2vw,44px)", letterSpacing: "-.04em", fontWeight: 900, lineHeight: 1 }}>Wat je hier krijgt</h2>
+            <h2 style={{ fontSize: "clamp(28px,3.2vw,44px)", letterSpacing: "-.04em", fontWeight: 900, lineHeight: 1 }}>Wat levert het op</h2>
             <p style={{ color: "#555", maxWidth: 420, fontSize: 15 }}>De basis goed neerzetten, strak uitvoeren en daarna zorgen dat het geheel sterk blijft staan.</p>
           </div>
         </FadeIn>
@@ -60,8 +60,10 @@ export default function Services() {
         </div>
       </div>
       <style>{`
+        #diensten { padding: 96px 0 }
         .services-grid { grid-template-columns: repeat(3,1fr) }
         @media (max-width:1040px) { .services-grid { grid-template-columns: repeat(2,1fr) } }
+        @media (max-width:720px)  { #diensten { padding: 56px 0 } }
         @media (max-width:600px)  { .services-grid { grid-template-columns: 1fr } }
       `}</style>
     </section>
