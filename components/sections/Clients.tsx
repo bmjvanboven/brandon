@@ -28,7 +28,7 @@ export default function Clients() {
               <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: 120, background: "linear-gradient(-90deg, #111, transparent)", zIndex: 1, pointerEvents: "none" }} />
 
               <div
-                style={{ display: "flex", alignItems: "center", gap: 72, width: "max-content", animation: "marquee 28s linear infinite" }}
+                style={{ display: "flex", alignItems: "center", gap: 72, width: "max-content", animation: "marquee 28s linear infinite", willChange: "transform", backfaceVisibility: "hidden" }}
                 onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
                 onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
               >
@@ -47,7 +47,7 @@ export default function Clients() {
         </FadeIn>
       </div>
 
-      <style>{`@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }`}</style>
+      <style>{`@keyframes marquee { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }`}</style>
     </section>
   );
 }
