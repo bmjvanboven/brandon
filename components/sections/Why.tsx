@@ -20,7 +20,7 @@ export default function Why() {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14 }} className="why-grid">
+        <div style={{ display: "grid", gap: 14 }} className="why-grid">
           {items.map((item, i) => (
             <FadeIn key={i} delay={i * .09}>
               <motion.article

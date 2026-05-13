@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section id="contact" style={{ padding: "96px 0" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 22px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr .9fr", gap: 14 }} className="contact-grid">
+        <div style={{ display: "grid", gap: 14 }} className="contact-grid">
 
           <FadeIn>
             <div style={{ border: "1px solid rgba(255,255,255,.07)", borderRadius: 28, padding: "40px 44px", background: "linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.01))", position: "relative", overflow: "hidden" }}>

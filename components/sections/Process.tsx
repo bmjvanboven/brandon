@@ -22,7 +22,7 @@ export default function Process() {
 
         <FadeIn delay={.1}>
           <div style={{ border: "1px solid rgba(255,255,255,.07)", borderRadius: 28, padding: 32, background: "linear-gradient(160deg, rgba(255,255,255,.03), rgba(255,255,255,.01))" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12 }} className="process-steps">
+            <div style={{ display: "grid", gap: 12 }} className="process-steps">
               {steps.map((s, i) => (
                 <motion.div key={i} whileHover={{ y: -2, background: "rgba(255,255,255,.055)" }}
                   style={{ padding: 20, borderRadius: 18, background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.06)", position: "relative", transition: "background .2s" }}>

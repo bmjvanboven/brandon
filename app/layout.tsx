@@ -4,7 +4,11 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-export const viewport: Viewport = { themeColor: "#111111" };
+export const viewport: Viewport = {
+  themeColor: "#111111",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "BRANDON — Logo, website, webshop en ondersteuning",

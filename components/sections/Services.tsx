@@ -43,7 +43,7 @@ export default function Services() {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="services-grid">
+        <div style={{ display: "grid", gap: 14 }} className="services-grid">
           {services.map((s, i) => (
             <FadeIn key={i} delay={i * .1}>
               <motion.article

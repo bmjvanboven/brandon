@@ -31,7 +31,7 @@ export default function Cases() {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="cases-grid">
+        <div style={{ display: "grid", gap: 14 }} className="cases-grid">
           {cases.map((c, i) => (
             <FadeIn key={i} delay={(i % 2) * .12}>
               <motion.article

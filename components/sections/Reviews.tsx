@@ -19,7 +19,7 @@ export default function Reviews() {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="reviews-grid">
+        <div style={{ display: "grid", gap: 14 }} className="reviews-grid">
           {reviews.map((r, i) => (
             <FadeIn key={i} delay={i * .1}>
               <motion.article

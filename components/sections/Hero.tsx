@@ -111,7 +111,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .7, duration: .7, ease: [.16,1,.3,1] }}
-              style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginTop: 32 }}
+              style={{ display: "grid", gap: 10, marginTop: 32 }}
               className="hero-points"
             >
               {[
@@ -134,12 +134,13 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: .25, duration: .8, ease: [.16,1,.3,1] }}
             style={{ display: "flex", flexDirection: "column", gap: 14 }}
+            className="hero-aside"
           >
             {[
               {
                 label: "Direct contact",
                 content: (
-                  <div style={{ padding: "16px", borderRadius: 16, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.06)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+                  <div className="hero-contact-row" style={{ padding: "16px", borderRadius: 16, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.06)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
                     <div>
                       <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: ".12em", color: "#666", fontWeight: 800, marginBottom: 4 }}>Bel of mail</div>
                       <a href="tel:+31628839370" style={{ fontSize: 16, fontWeight: 900, letterSpacing: "-.03em", transition: "color .2s" }}
@@ -185,10 +186,14 @@ export default function Hero() {
 
       <style>{`
         .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; align-items: stretch }
+        .hero-points { grid-template-columns: repeat(3,1fr) }
         @media (max-width: 1040px) { .hero-grid { grid-template-columns: 1fr } }
         @media (max-width: 600px) {
           .hero-grid > div:first-child { padding: 28px 24px 24px !important }
-          .hero-points { grid-template-columns: 1fr !important }
+          .hero-points { grid-template-columns: 1fr }
+          .hero-aside { gap: 10px !important }
+          .hero-aside > div { padding: 18px !important }
+          .hero-contact-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important }
         }
       `}</style>
     </section>
