@@ -23,10 +23,10 @@ export default function Clients() {
               <p style={{ color: "#555", fontSize: 14 }}>Een greep uit merken waar al aan gebouwd is.</p>
             </div>
 
-            <div style={{ overflow: "hidden", position: "relative" }}>
+            {/* Desktop: marquee */}
+            <div className="clients-marquee-wrap" style={{ overflow: "hidden", position: "relative" }}>
               <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: 120, background: "linear-gradient(90deg, #111, transparent)", zIndex: 1, pointerEvents: "none" }} />
               <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: 120, background: "linear-gradient(-90deg, #111, transparent)", zIndex: 1, pointerEvents: "none" }} />
-
               <div
                 style={{ display: "flex", alignItems: "center", gap: 72, width: "max-content", animation: "marquee 28s linear infinite", willChange: "transform", backfaceVisibility: "hidden" }}
                 onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
@@ -43,11 +43,49 @@ export default function Clients() {
                 ))}
               </div>
             </div>
+
+            {/* Mobile: swipe carousel */}
+            <div className="clients-carousel-wrap">
+              <div className="clients-carousel">
+                {clients.map((c, i) => (
+                  <a key={i} href={c.href} target="_blank" rel="noopener" className="clients-carousel-item">
+                    <Image src={c.src} alt={c.alt} width={160} height={68} style={{ maxHeight: 56, width: "auto", opacity: .8 }} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
 
-      <style>{`@keyframes marquee { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }`}</style>
+      <style>{`
+        @keyframes marquee { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
+
+        .clients-carousel-wrap { display: none }
+
+        @media (max-width: 720px) {
+          .clients-marquee-wrap { display: none }
+          .clients-carousel-wrap { display: block }
+          .clients-carousel {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 4px;
+          }
+          .clients-carousel::-webkit-scrollbar { display: none }
+          .clients-carousel-item {
+            flex: 0 0 50%;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+          }
+        }
+      `}</style>
     </section>
   );
 }
